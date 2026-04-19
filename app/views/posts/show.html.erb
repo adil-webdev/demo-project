@@ -1,0 +1,45 @@
+<article>
+  <h1><%= @post.title %></h1>
+
+  <div class="content">
+    <%= sanitize(@post.content) %>
+  </div>
+
+  <div class="meta">
+    <p>
+      By <%= @post.user.name %> |
+      Published <%= @post.created_at.strftime("%B %d, %Y") %> |
+      <%= @post.views_count %> views
+    </p>
+  </div>
+
+  <% if logged_in? && @post.user_id == current_user.id %>
+    <%= link_to "Edit", edit_post_path(@post) %>
+    <%= link_to "Delete", @post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <% end %>
+</article>
+
+<section class="comments">
+  <h2>Comments</h2>
+
+  <% @comments.each do |comment| %>
+    <div class="comment">
+      <p><%= comment.content %></p>
+
+      <p class="meta">
+        By <%= comment.user.name %> |
+        <%= comment.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+      </p>
+
+      <% if logged_in? && (comment.user_id == current_user.id || current_user.role == "admin") %>
+        <%= link_to "Delete", post_comment_path(@post, comment),
+                    data: { turbo_method: :delete } %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if logged_in? %>
+    <h3>Add Comment</h3>
+    <%= render "comments/form", post: @post, comment: Comment.new %>
+  <% end %>
+</section>

@@ -1,0 +1,22 @@
+admin:
+  name: Admin User
+  email: admin@example.com
+  password_digest: <%= BCrypt::Password.create('admin123') %>
+  role: admin
+  premium: true
+  membership_expires_at: <%= 1.year.from_now %>
+
+john:
+  name: John Doe
+  email: john@example.com
+  password_digest: <%= BCrypt::Password.create('password123') %>
+  role: user
+  premium: false
+
+jane:
+  name: Jane Smith
+  email: jane@example.com
+  password_digest: <%= BCrypt::Password.create('password123') %>
+  role: user
+  premium: true
+  membership_expires_at: <%= 6.months.from_now %>

@@ -1,0 +1,8 @@
+<h1><%= @user.name %></h1>
+<p>Email: <%= @user.email %></p>
+<p>Role: <%= @user.role %></p>
+
+<h2>Recent Posts</h2>
+<% @recent_posts.each do |post| %>
+  <p><%= post.title %></p>
+<% end %>

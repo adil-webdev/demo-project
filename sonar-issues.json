@@ -1,0 +1,20 @@
+{
+  "issues": [
+    {
+      "engineId": "rails-security",
+      "ruleId": "rails-sql-injection",
+      "primaryLocation": {
+        "message": "Rails: SQL Injection via String Interpolation — String interpolation in SQL queries allows SQL injection. Use parameterized queries. Fix: Use parameterized queries: Post.where(status: params[:status])",
+        "filePath": "app/controllers/posts_controller.rb",
+        "textRange": {
+          "startLine": 19,
+          "endLine": 19,
+          "startColumn": 0,
+          "endColumn": 47
+        }
+      },
+      "type": "VULNERABILITY",
+      "severity": "CRITICAL"
+    }
+  ]
+}

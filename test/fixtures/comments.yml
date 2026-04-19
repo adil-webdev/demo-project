@@ -1,0 +1,23 @@
+johns_comment:
+  user: john
+  post: welcome
+  content: Great introduction to SonarQube!
+  status: approved
+
+janes_comment:
+  user: jane
+  post: welcome
+  content: Very helpful demo, thanks for sharing.
+  status: approved
+
+admin_comment:
+  user: admin
+  post: code_quality
+  content: Nice explanation of code quality concepts.
+  status: approved
+
+pending_comment:
+  user: john
+  post: security
+  content: Very informative! Thanks for sharing.
+  status: pending

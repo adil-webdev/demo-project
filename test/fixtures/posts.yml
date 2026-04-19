@@ -1,0 +1,27 @@
+welcome:
+  user: admin
+  title: Welcome to SonarQube Demo
+  content: This is a demo application for showcasing SonarQube.
+  status: published
+  views_count: 150
+
+code_quality:
+  user: john
+  title: Understanding Code Quality
+  content: Code quality is essential for maintaining a healthy codebase.
+  status: published
+  views_count: 75
+
+security:
+  user: jane
+  title: Understanding Security Vulnerabilities
+  content: Learn about common security vulnerabilities and how to prevent them.
+  status: published
+  views_count: 200
+
+draft_post:
+  user: john
+  title: Draft Post About Testing
+  content: This is a draft post about testing best practices.
+  status: draft
+  views_count: 0

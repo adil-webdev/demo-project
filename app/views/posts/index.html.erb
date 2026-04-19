@@ -1,0 +1,22 @@
+<h1>All Posts</h1>
+
+<%= link_to "New Post", new_post_path if logged_in? %>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+    <article class="post">
+      <h2><%= link_to post.title, post %></h2>
+
+      <div class="content">
+        <%= truncate(post.content, length: 200) %>
+      </div>
+
+      <p class="meta">
+        By <%= post.author_name %> |
+        <%= post.views_count %> views
+      </p>
+
+      <p><%= link_to "Read More", post %></p>
+    </article>
+  <% end %>
+</div>

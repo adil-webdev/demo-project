@@ -1,0 +1,27 @@
+# SonarQube Project Configuration for Rails 8 Demo
+# This project intentionally contains code quality issues for demonstration purposes
+
+# Project identification
+sonar.projectKey=rails8-sonarqube-demo
+sonar.projectName=Rails 8 SonarQube Demo
+sonar.projectVersion=1.0
+
+# Source code location
+sonar.sources=app,lib
+sonar.tests=test
+sonar.sourceEncoding=UTF-8
+
+# Language
+sonar.language=ruby
+
+# Exclusions (don't scan these)
+sonar.exclusions=**/node_modules/**,**/vendor/**,**/tmp/**,**/log/**,**/public/**,db/schema.rb
+
+# Ruby specific settings
+sonar.ruby.coverage.reportPaths=coverage/.resultset.json
+
+# Additional settings
+sonar.scm.disabled=false
+sonar.token=YOUR_TOKEN_HERE
+
+
